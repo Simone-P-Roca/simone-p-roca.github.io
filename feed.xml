@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Simone P. Roca</title>
+    <link>https://simone-p-roca.github.io/</link>
+    <description>Updates from Simone P. Roca, PhD Candidate in Philosophy at IUSS Pavia.</description>
+    <language>en</language>
+    <atom:link href="https://simone-p-roca.github.io/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Talk at VUB Brussels: Philosophy of Mathematical Practice Masterclass</title>
+      <link>https://simone-p-roca.github.io/index.html#update-2026-09-16</link>
+      <guid>https://simone-p-roca.github.io/index.html#update-2026-09-16</guid>
+      <pubDate>Wed, 16 Sep 2026 00:00:00 GMT</pubDate>
+      <description>I've been invited to present a talk at the VUB Brussel University, within the Masterclass in the Philosophy of Mathematical Practice 2026.</description>
+    </item>
+
+    <item>
+      <title>Epistemology Summer School, University of Urbino</title>
+      <link>https://simone-p-roca.github.io/index.html#update-2026-08-31</link>
+      <guid>https://simone-p-roca.github.io/index.html#update-2026-08-31</guid>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 GMT</pubDate>
+      <description>I am partecipating at the VIII edition of the Epistemology Summer School at the University of Urbino.</description>
+    </item>
+
+    <item>
+      <title>Talk accepted at the SILFS Conference 2026</title>
+      <link>https://simone-p-roca.github.io/index.html#update-2026-06-30</link>
+      <guid>https://simone-p-roca.github.io/index.html#update-2026-06-30</guid>
+      <pubDate>Tue, 30 Jun 2026 00:00:00 GMT</pubDate>
+      <description>I've been accepted to present a talk at the SILFS Conference 2026.</description>
+    </item>
+
+    <item>
+      <title>Visiting the ZEGRa research group, University of Zurich</title>
+      <link>https://simone-p-roca.github.io/index.html#update-2026-05-15</link>
+      <guid>https://simone-p-roca.github.io/index.html#update-2026-05-15</guid>
+      <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
+      <description>I've been invited to visit the ZEGRa research group on rationality at the University of Zurich.</description>
+    </item>
+
+    <item>
+      <title>Elected Doctoral Student Representative, SUV Department</title>
+      <link>https://simone-p-roca.github.io/index.html#update-2026-02-06</link>
+      <guid>https://simone-p-roca.github.io/index.html#update-2026-02-06</guid>
+      <pubDate>Fri, 06 Feb 2026 00:00:00 GMT</pubDate>
+      <description>I've been elected Doctoral Student Representative to the SUV Department Council of the IUSS.</description>
+    </item>
+
+    <item>
+      <title>Talk at the FPMW-ESPM Conference 2025, Paris</title>
+      <link>https://simone-p-roca.github.io/index.html#update-2025-10-14</link>
+      <guid>https://simone-p-roca.github.io/index.html#update-2025-10-14</guid>
+      <pubDate>Tue, 14 Oct 2025 00:00:00 GMT</pubDate>
+      <description>I've been invited to participate at the FPMW-ESPM Conference 2025 in Paris.</description>
+    </item>
+
+    <item>
+      <title>Started my PhD at HUMATH</title>
+      <link>https://simone-p-roca.github.io/index.html#update-2025-10-01</link>
+      <guid>https://simone-p-roca.github.io/index.html#update-2025-10-01</guid>
+      <pubDate>Wed, 01 Oct 2025 00:00:00 GMT</pubDate>
+      <description>I've started my PhD at HUMATH.</description>
+    </item>
+  </channel>
+</rss>

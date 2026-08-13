@@ -1,0 +1,66 @@
+@media print {
+  :root {
+    --bg: #fff;
+    --fg: #000;
+    --fg-muted: #333;
+    --border: #000;
+    --accent: #000;
+  }
+
+  .nav,
+  .footer,
+  .theme-toggle {
+    display: none;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 11pt;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+  }
+
+  .block__title,
+  h1, h2, h3 {
+    break-after: avoid;
+  }
+
+  p,
+  address,
+  .cv-section,
+  .updates-item {
+    break-inside: avoid;
+  }
+
+  /* Print full CV content, not just the collapsed accordion headers */
+  .cv-toggle {
+    display: none;
+  }
+  .cv-section:not([open]) .cv-section__content {
+    display: block !important;
+  }
+
+  /* Print every update row, not just the ones currently expanded in the browser */
+  .updates-item[hidden] {
+    display: flex !important;
+  }
+  .updates-more {
+    display: none;
+  }
+
+  .divider {
+    border-top-color: #000;
+  }
+
+  @page {
+    margin: 2cm;
+  }
+}
