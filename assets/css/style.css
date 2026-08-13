@@ -262,6 +262,13 @@ img { max-width: 100%; display: block; }
 }
 .cv-section[open] .cv-toggle::after { transform: translateX(-50%) scaleY(0); }
 .cv-section__content { padding-bottom: 24px; }
+.cv-entry {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.cv-entry + .cv-entry { margin-top: 10px; }
+.cv-entry__title { font-weight: 700; }
+.cv-entry__meta { color: var(--fg-muted); }
 .placeholder {
   font-size: 0.95rem;
   font-style: italic;
