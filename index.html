@@ -114,7 +114,17 @@
 
   <main id="main" tabindex="-1">
     <section id="top" class="hero">
-      <div class="wrap">
+      <div class="wrap hero__inner">
+        <img
+          src="assets/images/profile.jpg"
+          srcset="assets/images/profile.jpg 400w, assets/images/profile@2x.jpg 800w"
+          sizes="(min-width: 640px) 160px, 96px"
+          alt="Simone P. Roca"
+          class="hero__photo"
+          width="400"
+          height="400"
+          fetchpriority="high"
+        />
         <h1>Hi, I&rsquo;m <span class="accent">Simone P. Roca</span> and I work in epistemology, philosophy of mathematics and philosophy of science.</h1>
       </div>
     </section>
