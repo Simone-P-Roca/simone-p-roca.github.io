@@ -277,6 +277,13 @@ img { max-width: 100%; display: block; }
   font-style: italic;
   color: var(--fg-muted);
 }
+.legal-heading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-top: 1.75em;
+}
+.legal-heading:first-of-type { margin-top: 1.25em; }
+.legal-heading + p { margin-top: 0.5em; }
 
 /* ---------- Contact ---------- */
 .block__content--split {
