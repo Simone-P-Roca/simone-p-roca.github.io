@@ -89,3 +89,26 @@
     word.textContent = expanded ? "earlier" : "fewer";
   });
 })();
+
+(function () {
+  var KEY = "cookie-consent";
+  try {
+    if (localStorage.getItem(KEY)) return;
+  } catch (e) {
+    return;
+  }
+
+  var bar = document.createElement("div");
+  bar.className = "cookie-banner";
+  bar.innerHTML =
+    '<p>This site uses local storage only, to remember your theme preference. No cookies, no tracking. See the <a href="privacy-policy.html">Privacy Policy</a>.</p>' +
+    '<button type="button">Got it</button>';
+  document.body.appendChild(bar);
+
+  bar.querySelector("button").addEventListener("click", function () {
+    try {
+      localStorage.setItem(KEY, "1");
+    } catch (e) {}
+    bar.remove();
+  });
+})();

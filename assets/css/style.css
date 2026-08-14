@@ -450,7 +450,40 @@ address {
 @media (prefers-reduced-motion: reduce) {
   .nav__name, .nav, .cv-toggle::before, .cv-toggle::after, .theme-toggle,
   .nav__logo, .nav__links a, .cv-section summary, .contact-links a,
-  .updates-more, .footer__legal a, .block__content a, .skip-link {
+  .updates-more, .footer__legal a, .block__content a, .skip-link,
+  .cookie-banner button {
     transition: none !important;
   }
 }
+
+/* ---------- Cookie banner ---------- */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px var(--side-pad);
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+.cookie-banner p { margin: 0; color: var(--fg-muted); }
+.cookie-banner a { color: var(--accent); text-decoration: underline; }
+.cookie-banner button {
+  flex-shrink: 0;
+  font: inherit;
+  font-weight: 700;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+.cookie-banner button:hover { opacity: 0.7; }
