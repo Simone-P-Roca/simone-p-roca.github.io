@@ -195,6 +195,33 @@ img { max-width: 100%; display: block; }
   font-weight: 700;
   letter-spacing: -0.01em;
 }
+.cv-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 7px 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--fg);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  transition: border-color 0.2s ease, opacity 0.15s ease;
+}
+.cv-download:hover { border-color: var(--fg); }
+.cv-download:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.cv-download__icon {
+  width: 9px;
+  height: 9px;
+  border-left: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(-45deg);
+  flex-shrink: 0;
+}
 .block__content p {
   font-size: 1rem;
   line-height: 1.75;
@@ -459,7 +486,7 @@ address {
   .nav__name, .nav, .cv-toggle::before, .cv-toggle::after, .theme-toggle,
   .nav__logo, .nav__links a, .cv-section summary, .contact-links a,
   .updates-more, .footer__legal a, .block__content a, .skip-link,
-  .cookie-banner button {
+  .cv-download, .cookie-banner button {
     transition: none !important;
   }
 }

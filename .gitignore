@@ -9,3 +9,6 @@ CLAUDE.md
 # Scratch files
 print prova.pdf
 *.tmp
+
+# CV LaTeX source (kept local; only the compiled PDF is published)
+assets/cv/*.tex
