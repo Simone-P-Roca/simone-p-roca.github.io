@@ -232,6 +232,8 @@ img { max-width: 100%; display: block; }
   column-count: 1;
   column-gap: 48px;
 }
+/* Keep each paragraph whole; never split a line off into the next column. */
+.block__content--cols p { break-inside: avoid; }
 @media (min-width: 768px) {
   .block__content--cols { column-count: 2; }
 }
