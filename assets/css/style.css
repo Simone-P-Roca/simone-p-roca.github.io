@@ -144,6 +144,9 @@ img { max-width: 100%; display: block; }
   .nav__links .full { display: none; }
   .nav__links .short { display: inline; }
 }
+@media (max-width: 640px) {
+  .nav__name { display: none; }
+}
 
 /* ---------- Hero ---------- */
 .hero {
@@ -261,7 +264,7 @@ img { max-width: 100%; display: block; }
 }
 .cv-section summary:hover { opacity: 0.7; }
 .cv-section summary::-webkit-details-marker { display: none; }
-.cv-section summary h3 {
+.cv-section summary :is(h2, h3) {
   font-size: 1.05rem;
   font-weight: 700;
 }
@@ -503,7 +506,7 @@ address {
   margin-bottom: 4px;
 }
 .bib-entry { padding-block: 14px; max-width: 70ch; }
-.bib-entry + .bib-entry { border-top: 1px solid var(--border); }
+.bib-entry:not([hidden]) ~ .bib-entry:not([hidden]) { border-top: 1px solid var(--border); }
 .bib-entry[hidden] { display: none; }
 .bib-entry__cite { font-size: 1rem; line-height: 1.6; }
 .bib-entry__cite cite { font-style: italic; }

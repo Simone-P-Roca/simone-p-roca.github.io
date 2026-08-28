@@ -116,7 +116,7 @@
 (function () {
   var input = document.getElementById("bib-filter");
   var count = document.getElementById("bib-count");
-  if (!input) return;
+  if (!input || !count) return;
 
   var entries = Array.prototype.slice.call(document.querySelectorAll(".bib-entry"));
   var sections = Array.prototype.slice.call(document.querySelectorAll(".cv-section"));
@@ -136,10 +136,9 @@
       if (q && any) sec.open = true;
     });
     if (q) {
-      count.hidden = false;
       count.textContent = shown + " of " + total + " entries";
     } else {
-      count.hidden = true;
+      count.textContent = "";
     }
   }
 
