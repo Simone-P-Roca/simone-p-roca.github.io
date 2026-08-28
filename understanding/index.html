@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Understanding: An Annotated Bibliography &mdash; Simone P. Roca</title>
+  <meta name="description" content="A curated, annotated reading path through the epistemology of understanding as it bears on mathematics and on machines." />
+  <link rel="canonical" href="https://simone-p-roca.github.io/understanding/" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="icon" href="/assets/icons/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/assets/icons/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/assets/icons/favicon-16x16.png" sizes="16x16" />
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/print.css" media="print" />
+  <link rel="alternate" type="application/rss+xml" title="Simone P. Roca" href="/feed.xml" />
+  <script>
+    (function () {
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+      var isReload = false;
+      try {
+        var navEntries = performance.getEntriesByType("navigation");
+        if (navEntries && navEntries[0]) {
+          isReload = navEntries[0].type === "reload";
+        } else if (performance.navigation) {
+          isReload = performance.navigation.type === 1;
+        }
+      } catch (e) {}
+      if (isReload) {
+        (function () {
+          function resetScroll() {
+            if (window.location.hash) {
+              try {
+                history.replaceState(null, "", window.location.pathname + window.location.search);
+              } catch (e) {}
+            }
+            window.scrollTo(0, 0);
+          }
+          resetScroll();
+          requestAnimationFrame(resetScroll);
+          window.addEventListener("pageshow", resetScroll);
+          window.addEventListener("load", resetScroll);
+        })();
+      }
+      try {
+        var t = localStorage.getItem("theme");
+        if (t !== "light" && t !== "dark") {
+          t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header class="nav is-scrolled">
+    <div class="nav__inner">
+      <div class="nav__brand">
+        <a href="/" class="nav__logo" aria-label="Simone P. Roca, home">
+          <img src="/assets/icons/logo-mark.png" alt="" width="20" height="47" />
+        </a>
+        <a href="/" class="nav__name" aria-hidden="true" tabindex="-1">Simone P. Roca</a>
+      </div>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="/#about">About</a>
+        <a href="/#cv" aria-label="Curriculum Vitae"><span class="full" aria-hidden="true">Curriculum Vitae</span><span class="short" aria-hidden="true">CV</span></a>
+        <a href="/#contact">Contact</a>
+        <a href="/#updates">Updates</a>
+        <a href="/understanding/" aria-current="page">Resources</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="block">
+      <div class="wrap block__grid">
+        <h1 class="block__title">Understanding: An Annotated Bibliography</h1>
+        <div class="block__content">
+          <p>This is an annotated reading path through the epistemology of understanding, ordered as a route rather than a catalogue. Each entry says what a work is for and where it is weak, with a link to the published version and to a free copy wherever one exists.</p>
+          <p>It aims to be comprehensive on understanding in mathematics and in the philosophy of science, and is deliberately selective on machine understanding: that section tracks only the work bearing directly on the epistemological questions and is reviewed rather than kept exhaustive. General philosophy of mind, pedagogy, and the history of the concept are out of scope.</p>
+          <input
+            type="search"
+            class="bib-filter"
+            id="bib-filter"
+            placeholder="Filter entries&hellip;"
+            aria-label="Filter bibliography entries"
+            autocomplete="off"
+          />
+          <p class="bib-count" id="bib-count" aria-live="polite" hidden></p>
+          <details class="cv-section">
+            <summary><h3>Starting points</h3><span class="cv-toggle" aria-hidden="true"></span></summary>
+            <div class="cv-section__content"></div>
+          </details>
+          <details class="cv-section">
+            <summary><h3>What understanding is</h3><span class="cv-toggle" aria-hidden="true"></span></summary>
+            <div class="cv-section__content"></div>
+          </details>
+          <details class="cv-section">
+            <summary><h3>Grasping and cognitive control</h3><span class="cv-toggle" aria-hidden="true"></span></summary>
+            <div class="cv-section__content"></div>
+          </details>
+          <details class="cv-section">
+            <summary><h3>Factivity and idealization</h3><span class="cv-toggle" aria-hidden="true"></span></summary>
+            <div class="cv-section__content"></div>
+          </details>
+          <details class="cv-section">
+            <summary><h3>Models and understanding</h3><span class="cv-toggle" aria-hidden="true"></span></summary>
+            <div class="cv-section__content"></div>
+          </details>
+          <details class="cv-section">
+            <summary><h3>Understanding in mathematics</h3><span class="cv-toggle" aria-hidden="true"></span></summary>
+            <div class="cv-section__content"></div>
+          </details>
+          <details class="cv-section">
+            <summary><h3>Proof: rigor, ineffability, know-how</h3><span class="cv-toggle" aria-hidden="true"></span></summary>
+            <div class="cv-section__content"></div>
+          </details>
+          <details class="cv-section">
+            <summary><h3>Testimony and the social</h3><span class="cv-toggle" aria-hidden="true"></span></summary>
+            <div class="cv-section__content"></div>
+          </details>
+          <details class="cv-section">
+            <summary><h3>Machine understanding</h3><span class="cv-toggle" aria-hidden="true"></span></summary>
+            <div class="cv-section__content">
+              <p class="placeholder">Reviewed August 2026 &mdash; selective by design.</p>
+            </div>
+          </details>
+          <details class="cv-section">
+            <summary><h3>Understanding and inquiry</h3><span class="cv-toggle" aria-hidden="true"></span></summary>
+            <div class="cv-section__content"></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <p class="placeholder">This bibliography is under active development. Entries and annotations are being added.</p>
+      </div>
+    </section>
+  </main>
+
+  <hr class="divider" />
+
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <p class="footer__copyright">&copy; 2026 Simone P. Roca</p>
+      <button type="button" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false"></button>
+      <nav class="footer__legal" aria-label="Legal">
+        <a href="/legal-notice.html">Legal Notice</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
