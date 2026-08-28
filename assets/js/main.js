@@ -101,7 +101,7 @@
   var bar = document.createElement("div");
   bar.className = "cookie-banner";
   bar.innerHTML =
-    '<p>This site uses local storage only, to remember your theme preference. No cookies, no tracking. See the <a href="privacy-policy.html">Privacy Policy</a>.</p>' +
+    '<p>This site uses local storage only, to remember your theme preference. No cookies, no tracking. See the <a href="/privacy-policy.html">Privacy Policy</a>.</p>' +
     '<button type="button">Got it</button>';
   document.body.appendChild(bar);
 
@@ -111,4 +111,36 @@
     } catch (e) {}
     bar.remove();
   });
+})();
+
+(function () {
+  var input = document.getElementById("bib-filter");
+  var count = document.getElementById("bib-count");
+  if (!input || !count) return;
+
+  var entries = Array.prototype.slice.call(document.querySelectorAll(".bib-entry"));
+  var sections = Array.prototype.slice.call(document.querySelectorAll(".cv-section"));
+  var total = entries.length;
+
+  function apply() {
+    var q = input.value.trim().toLowerCase();
+    var shown = 0;
+    entries.forEach(function (el) {
+      var match = !q || el.textContent.toLowerCase().indexOf(q) !== -1;
+      el.hidden = !match;
+      if (match) shown++;
+    });
+    sections.forEach(function (sec) {
+      var any = sec.querySelector(".bib-entry:not([hidden])");
+      sec.hidden = !!q && !any;
+      if (q && any) sec.open = true;
+    });
+    if (q) {
+      count.textContent = shown + " of " + total + " entries";
+    } else {
+      count.textContent = "";
+    }
+  }
+
+  input.addEventListener("input", apply);
 })();
