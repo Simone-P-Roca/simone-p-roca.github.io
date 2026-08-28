@@ -490,6 +490,7 @@ address {
 .bib-filter {
   width: 100%;
   max-width: 65ch;
+  margin-top: clamp(20px, 4vw, 32px);
   margin-bottom: 8px;
   padding: 9px 14px;
   font: inherit;
