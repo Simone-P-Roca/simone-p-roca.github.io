@@ -18,8 +18,9 @@
 - No JS library. The filter is ~15 lines of vanilla JS, guarded with an early `return` like every other IIFE in `main.js`.
 - Reuse `.cv-section` for the ten accordions — do not create a parallel accordion component. Only new CSS is a `.bib-entry` variant + filter input styling.
 - Entry `id`s follow the existing anchor pattern (`#update-2026-09-16` → `#bib-<slug>`), so individual entries are linkable.
-- Launch gate: **25 entries, all ten sections present.** Stubs are marked `In progress | suggestions?` with a `mailto:` button. Section 9 carries a dated "reviewed <month year>, selective by design" line.
+- Launch gate: **25 entries, all ten sections present.** Stubs are marked with plain placeholder text (`Annotation in progress.`) — **no `mailto:` button** (overrides the spec's "In progress | suggestions?" email button; the reader-contribution mechanism is dropped for now). Section 9 carries a dated "reviewed <month year>, selective by design" line.
 - Two links per entry where available: DOI + free copy (PhilArchive / preprint / author PDF).
+- The page ends with a placeholder line stating the bibliography is under active development. **No suggested-citation / Zenodo DOI block at launch** — added later once the DOI is minted.
 
 ---
 
@@ -27,7 +28,7 @@
 
 | File | Change | Responsibility |
 |------|--------|----------------|
-| `understanding/index.html` | Create | The bibliography page: head, nav, intro, filter, ten accordions, suggested-citation block, footer. |
+| `understanding/index.html` | Create | The bibliography page: head, nav, intro, filter, ten accordions, "under development" placeholder line, footer. |
 | `assets/css/style.css` | Modify (append) | `.bib-entry` layout (citation / links / annotation / stub state) + `.bib-filter` input. |
 | `assets/js/main.js` | Modify (append) | One IIFE: filter entries by `textContent`, hide empty sections, live count. |
 | `index.html` | Modify (nav) | Add `Resources` link to `.nav__links`. |
@@ -61,7 +62,7 @@ Create `understanding/index.html` by copying `index.html`'s structure and changi
 - `.nav__links` hrefs point back to the homepage: `href="/#about"`, `href="/#cv"`, `href="/#contact"`, `href="/#updates"`, and the new `href="/understanding/"` labelled `Resources` with `aria-current="page"`.
 - `.nav__logo` / `.nav__name` anchors point to `/` (not `#top`).
 - Replace `<main>` contents with: an intro `<section class="block">` (one `<h1>` + 2 short paragraphs stating what the list is and what it deliberately excludes), a filter `<input>` (see Step 3), and ten `<details class="cv-section">` blocks — headings and order from spec §"Page structure". Section 9's `.cv-section__content` opens with `<p class="placeholder">Reviewed August 2026 — selective by design.</p>`.
-- Add a closing `<section class="block">` with the suggested-citation line (concept DOI is minted post-launch by the author; use a `<p class="placeholder">Citable DOI: minted on publication.</p>` placeholder for now).
+- Add a closing `<section class="block">` containing only `<p class="placeholder">This bibliography is under active development. Entries and annotations are being added.</p>`. No suggested-citation / DOI block at launch.
 - Keep `<footer>` identical but legal links become `/legal-notice.html` / `/privacy-policy.html`.
 - Keep `<script src="/assets/js/main.js"></script>`.
 
@@ -129,7 +130,7 @@ git commit -m "feat: scaffold /understanding/ bibliography page and wire Resourc
 - Consumes: `.cv-section` / `.cv-section__content` from Task 1; `#bib-filter` and `#bib-count` inputs from Task 1.
 - Produces: markup contract for Task 3 — each entry is
   `<div class="bib-entry" id="bib-<slug>"> <p class="bib-entry__cite">…</p> <p class="bib-entry__links"><a href>DOI</a> <a href>Free copy</a></p> <p class="bib-entry__note">…</p> </div>`.
-  A stub instead carries `<p class="bib-entry__note bib-entry__note--stub">In progress — <a href="mailto:simone.roca@iusspavia.it?subject=Understanding%20bibliography%20suggestion">suggestions?</a></p>` and no `.bib-entry__note` prose.
+  A stub instead carries `<p class="bib-entry__note bib-entry__note--stub">Annotation in progress.</p>` and no `.bib-entry__note` prose. No `mailto:` link anywhere in an entry.
 
 - [ ] **Step 1: Add CSS**
 
@@ -259,7 +260,7 @@ This is a content task, not a code task. It is done in section order and can be 
 | 9 Machine understanding | 3 | vault (strong) — Grimm et al. 2026, Chen et al. 2026, Ha & Schmidhuber |
 | 10 Understanding and inquiry | 2 | fresh — zetetic norms, El Shazly 2026 |
 
-Total: 25. Roughly 18 come annotated from the vault; **~7 must be written fresh** (sections 8 and 10, plus filling 1/3/5). Every other entry is a **stub**: citation + both links + `In progress — suggestions?`.
+Total: 25. Roughly 18 come annotated from the vault; **~7 must be written fresh** (sections 8 and 10, plus filling 1/3/5). Every other entry is a **stub**: citation + both links + `Annotation in progress.`
 
 - [ ] **Step 1: Per section, add entries**
 
@@ -269,7 +270,7 @@ For each of the ten sections, inside its `.cv-section__content`, add `.bib-entry
 2. Add `<p class="bib-entry__links">` with the DOI link and, where a free copy exists, a second link labelled `Free copy`. If no DOI, link the publisher/journal page. If neither, omit the links paragraph.
 3. Annotation vs stub:
    - **Annotated** (vault-backed): 2-3 sentences from the descriptive/critical material in the vault note — what the paper is *for*, and where it is weak. Not neutral paraphrase. Per spec §"Editorial rule": the author's own in-progress positioning (`==highlighted==` passages) is left out by default.
-   - **Stub**: `<p class="bib-entry__note bib-entry__note--stub">In progress — <a href="mailto:simone.roca@iusspavia.it?subject=Understanding%20bibliography%20suggestion">suggestions?</a></p>`
+   - **Stub**: `<p class="bib-entry__note bib-entry__note--stub">Annotation in progress.</p>`
 4. Give the entry `id="bib-<lastname><year>"` (e.g. `bib-avigad2008`).
 
 - [ ] **Step 2: Section 9 dated line**
@@ -324,7 +325,7 @@ git add -A
 git commit -m "chore: launch checks for /understanding/ bibliography"
 ```
 
-Post-launch, by the author (not in this plan): mint the Zenodo concept DOI (ORCID `0009-0004-7748-6771`, upload a `print.css` PDF of the live page), then replace the citation placeholder with the concept DOI.
+Post-launch, by the author (not in this plan): mint the Zenodo concept DOI (ORCID `0009-0004-7748-6771`, upload a `print.css` PDF of the live page), then replace the "under active development" placeholder with a suggested-citation block carrying the concept DOI.
 
 ---
 
@@ -337,11 +338,11 @@ Post-launch, by the author (not in this plan): mint the Zenodo concept DOI (ORCI
 - Ten sections in reading-path order, ~9 entries/section at maturity, section 9 dated line → Task 1 Step 1, Task 3. ✅
 - Entry format: citation, two links, stable `id`, annotated vs stub, editorial rule on unpublished positioning → Task 2 interface contract, Task 3 Step 1. ✅
 - Technical form: no build step, reuse `.cv-section`, one filter input + ~15 lines JS, HTML is single source of truth → Task 1, Task 2. ✅
-- Launch criteria: 25 entries / all ten sections / stubs with email button → Task 3 Step 3 gate. ✅
+- Launch criteria: 25 entries / all ten sections / stubs with `Annotation in progress.` placeholder (email button dropped per user) → Task 3 Step 3 gate. ✅
 - Seeding honest count (18-20 vault, 5-7 fresh) → Task 3 distribution table. ✅
 - Citable identity (Zenodo, author-run) → noted as post-launch author step, Task 4. ✅
 - Out of scope (`.bib` export, `/resources/` hub, Schema.org per-entry) → not built. ✅
 
-**Placeholder scan:** DOI concept-id is a deliberate `placeholder` class element pending author minting — flagged, not a plan gap. No "TBD"/"handle edge cases" left.
+**Placeholder scan:** the "under active development" line is a deliberate `placeholder` class element; the suggested-citation / DOI block is intentionally deferred to post-launch. No "TBD"/"handle edge cases" left.
 
 **Type consistency:** `.bib-entry`, `.bib-entry__cite`, `.bib-entry__links`, `.bib-entry__note`, `.bib-entry__note--stub`, `#bib-filter`, `#bib-count`, `.bib-count`, `.bib-filter` used identically in Tasks 2 and 3. Filter IIFE reads `#bib-filter`/`#bib-count` created in Task 1 Step 3. ✅
