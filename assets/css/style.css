@@ -483,12 +483,56 @@ address {
 }
 .error-link:hover { opacity: 0.7; }
 
+/* ---------- Bibliography ---------- */
+.bib-filter {
+  width: 100%;
+  max-width: 65ch;
+  margin-bottom: 8px;
+  padding: 9px 14px;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--fg);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+.bib-filter:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.bib-count {
+  font-size: 0.85rem;
+  color: var(--fg-muted);
+  margin-bottom: 4px;
+}
+.bib-entry { padding-block: 14px; max-width: 70ch; }
+.bib-entry + .bib-entry { border-top: 1px solid var(--border); }
+.bib-entry[hidden] { display: none; }
+.bib-entry__cite { font-size: 1rem; line-height: 1.6; }
+.bib-entry__cite cite { font-style: italic; }
+.bib-entry__links {
+  margin-top: 4px;
+  font-size: 0.9rem;
+}
+.bib-entry__links a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  margin-right: 16px;
+  transition: opacity 0.15s ease;
+}
+.bib-entry__links a:hover { opacity: 0.7; }
+.bib-entry__note {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--fg-muted);
+}
+.bib-entry__note--stub { font-style: italic; }
+.cv-section[hidden] { display: none; }
+
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   .nav__name, .nav, .cv-toggle::before, .cv-toggle::after, .theme-toggle,
   .nav__logo, .nav__links a, .cv-section summary, .contact-links a,
   .updates-more, .footer__legal a, .block__content a, .skip-link,
-  .cv-download, .cookie-banner button {
+  .cv-download, .cookie-banner button, .bib-filter, .bib-entry__links a {
     transition: none !important;
   }
 }
